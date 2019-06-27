@@ -1,0 +1,16 @@
+{% extends  'panel/base/base.html' %}
+{% load staticfiles %}
+{% block main %}
+<!--<a href="{{prev_page}}">back</a>-->
+<form action="{% url 'category_update_url' category_id=cat.id %}" method="post">
+    {% csrf_token %}
+    {% for field in form %}
+        {{field.label}}
+        {{field}}
+        {% if field.errors %}
+            {{field.errors}}
+        {%endif%}
+    {% endfor %}
+    <button type="submit" class="btn btn-primary">Создать категорию</button>
+</form>
+{% endblock %}
