@@ -6686,3 +6686,14 @@ header.light-skin.hdr-bgclr:before {
 .add-div-proj span{
     margin-right: 20px;
 }
+.checkbox{
+    position:relative !important;
+    left:0 !important;
+    right:0;
+    top:0;
+    bottom:0;
+    width:50px !important;
+}
+label{
+    margin-bottom:0;
+}

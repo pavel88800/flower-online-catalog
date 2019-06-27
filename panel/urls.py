@@ -14,4 +14,8 @@ urlpatterns = [
     path('sub_category/<str:sub_category_id>/delete/', SubCategoryDelete.as_view(), name='sub_category_delete_url'),
     path('sub_category/<str:sub_category_id>/update/', SubCategoryUpdate.as_view(), name="sub_category_update_url"),
 
+    path('catalog_item/create/', CatalogItemCreate.as_view(), name="catalog_item_create_url"),
+
+    path('get_subcategory/', get_subcaegories, name="get_subcategory_url"),
+
 ]

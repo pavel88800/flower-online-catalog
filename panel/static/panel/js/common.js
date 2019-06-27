@@ -74,4 +74,22 @@ function urlRusLat(str) {
         $('.sub-category-slug').val(urlRusLat(value));
     });
 
+    $(document).on("change",'#category',function(){ //ajax подгрузка подкатегорий для каждой котегории
+        if($(this).val() != ''){
+            $.ajax({
+                type:'post',
+                url: $('.get_subcategory').val(),
+                data:{id:$(this).val(), csrfmiddlewaretoken:$( "[name='csrfmiddlewaretoken']" ).val()},
+                success:function(res){
+                $('#sub_category').html('');
+                    for(let i in res){
+                        $('#sub_category').append('<option value="'+res[i].pk+'">'+res[i].fields.title+'</option>');
+                    }
+                }
+            });
+        }else{
+            $('#sub_category').html('');
+        }
+    })
+
 })

@@ -240,6 +240,7 @@
     <nav class="custom-scrollbar">
         <div class="d-flex justify-content-around align-items-center"><h4><a href="{% url 'category_list_url' %}">Категории</a></h4><a href="{% url 'category_create_url' %}" class="add-category" title="Добавить категорию"></a></div>
 <!--        <a href="{% url 'sub_category_create_url' %}">Создать подкатегорию</a>-->
+        <a href="{% url 'catalog_item_create_url' %}">Создать товар</a>
         <ul class="drp-sec">
             {% for cat in category %}
                 <li class="has-drp"><a href="#" title=""><i class="ion-briefcase"></i> <span>{{cat.title}}</span></a>
@@ -307,10 +308,7 @@
 {% block main %}
 
 {% endblock %}
-<footer>
-    <p>Copyright <a href="#" title="">Example Company</a> &amp; 2017 - 2018</p>
-    <span>10GB of 250GB Free.</span>
-</footer>
+
 <!-- Vendor: Javascripts -->
 <script src="{% static 'panel/js/jquery.min.js' %}" type="text/javascript"></script>
 <!-- Vendor: Followed by our custom Javascripts -->

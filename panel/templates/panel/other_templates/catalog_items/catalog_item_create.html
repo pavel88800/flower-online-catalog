@@ -1,0 +1,69 @@
+{% extends  'panel/base/base.html' %}
+{% load staticfiles %}
+{% block main %}
+<div class="panel-content">
+    <div class="filter-items">
+        <div class="row grid-wrap mrg20">
+            <div class="col-xl-6">
+                <form action="{% url 'catalog_item_create_url' %}" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <input type="hidden" name="" class="get_subcategory" value="{% url 'get_subcategory_url' %}">
+                    <div class="form-group d-flex justify-content-start align-items-center">
+                        <label for="">Активность</label>
+                        <input type="checkbox" name="active" class="form-control checkbox">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Название</label>
+                        <input type="text" name="name" required class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="category">Категории</label>
+                        <select class="form-control" required name="category" id="category">
+                            <option value=""></option>
+                            {% for cat in category %}
+                                <option value="{{cat.id}}">{{cat.title}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="sub_category">Подкатегории</label>
+                        <select class="form-control" required name="sub_category" id="sub_category">
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="">ЧПУ</label>
+                        <input type="text" name="slug" required class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Детальное описание</label>
+                        <textarea name="description" id="" cols="30" rows="10" class="form-control"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Картинка анонса</label>
+                        <input type="file" name="prev_img" required class="form-control-file" id="">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Картинки</label>
+                        <input type="file" name="img[]" multiple class="form-control-file" id="">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Цена</label>
+                        <input type="text" name="price" required class="form-control">
+                    </div>
+                    <div class="form-group d-flex justify-content-start align-items-center">
+                        <label for="">Акция</label>
+                        <input type="checkbox" name="share" class="form-control checkbox">
+                    </div>
+                    <div class="form-group d-flex justify-content-start align-items-center">
+                        <label for="">Новинка</label>
+                        <input type="checkbox" name="new" class="form-control checkbox">
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" class="form-control" value="Сохранить">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
