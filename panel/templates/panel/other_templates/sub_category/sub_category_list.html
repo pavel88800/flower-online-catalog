@@ -14,7 +14,7 @@
                     <div class="wdgt-opt">
                         <span class="wdgt-opt-btn"><i class="ion-android-more-vertical"></i></span>
                         <div class="wdgt-opt-lst brd-rd5">
-                            <a class="" href="#" title="">Перейти</a>
+                            <a class="" href="{% url 'catalog_item_list_url'  sub_category_id=sub_category.id %}" title="">Перейти</a>
                             <a class="" href="{% url 'sub_category_update_url' sub_category_id=sub_category.id  %}" title="">Изменить</a>
                             <a class="" href="{% url 'sub_category_delete_url' sub_category_id=sub_category.id  %}" title="">Удалить</a>
                         </div>

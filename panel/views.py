@@ -3,38 +3,40 @@ from .models import *
 from django.views.generic import View
 from .forms import CategoryForm, SubCategoryForm
 from .utils import *
-from django.http import HttpResponseNotFound, HttpResponse, JsonResponse
+from django.http import HttpResponse
 from django.core import serializers
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.core.paginator import Paginator
 
 
-class IndexPage(ObjectListMixin, View):
+class IndexPage(LoginRequiredMixin, ObjectListMixin, View):
     model = Category()
     template = 'panel/base/index.html'
 
 
-class CategoryList(ObjectListMixin, View):
+class CategoryList(LoginRequiredMixin, ObjectListMixin, View):
     model = Category()
     template = 'panel/other_templates/category/category_list.html'
 
 
-class CategoryCreate(ObjectsCreateUpdateMixin, View):
+class CategoryCreate(LoginRequiredMixin, ObjectsCreateUpdateMixin, View):
     form = CategoryForm
     template = 'panel/other_templates/category/category_create.html'
     where_redirect = '/panel/category/list/'
 
 
-class CategoryUpdate(ObjectsCreateUpdateMixin, View):
+class CategoryUpdate(LoginRequiredMixin, ObjectsCreateUpdateMixin, View):
     form = CategoryForm
     template = 'panel/other_templates/category/category_update.html'
     where_redirect = '/panel/category/list/'
     model = Category()
 
 
-class CategoryDelete(ObjectsDelete, View):
+class CategoryDelete(LoginRequiredMixin, ObjectsDelete, View):
     model = Category()
 
 
-class SubCategoryList(View):
+class SubCategoryList(LoginRequiredMixin, View):
     def get(self, request, category_id):
         category = Category.objects.get(id=category_id)
         categories = Category.objects.all()
@@ -45,68 +47,67 @@ class SubCategoryList(View):
         return render(request, 'panel/other_templates/sub_category/sub_category_list.html', context)
 
 
-class SubCategoriesCreate(ObjectsSubCreateUpdateMixin, View):
+class SubCategoriesCreate(LoginRequiredMixin, ObjectsSubCreateUpdateMixin, View):
     form = SubCategoryForm
     template = 'panel/other_templates/sub_category/sub_category_create.html'
     where_redirect = '/panel/category/list/'
 
 
-class SubCategoryUpdate(ObjectsSubCreateUpdateMixin, View):
+class SubCategoryUpdate(LoginRequiredMixin, ObjectsSubCreateUpdateMixin, View):
     form = SubCategoryForm
     template = 'panel/other_templates/sub_category/sub_category_update.html'
     where_redirect = '/panel/category/list/'
     model = SubCategory()
 
 
-class SubCategoryDelete(ObjectsDelete, View):
+class SubCategoryDelete(LoginRequiredMixin, ObjectsDelete, View):
     model = SubCategory()
 
 
-class CatalogItemCreate(View):
-    def get(self, request):
+class CatalogItemList(LoginRequiredMixin, View):
+    def get(self, request, sub_category_id):
+        sub_category = SubCategory.objects.get(id=sub_category_id)
         all_categories = Category.objects.all()
         context = {
-            'category': all_categories
+            'category': all_categories,
+            'cat': sub_category,
         }
-        return render(request, 'panel/other_templates/catalog_items/catalog_item_create.html', context)
+        return render(request, 'panel/other_templates/catalog_items/catalog_item_list.html', context)
 
-    def post(self, request):
-        if request.method == 'POST':
-            item = Product()
-            item.name = request.POST.get('name')
-            if request.POST.get('active'):
-                item.active = True
-            else:
-                item.active = False
-            category = Category.objects.get(id=request.POST.get('category'))
-            print(category)
-            item.category = category
-            sub_category = SubCategory.objects.get(id=request.POST.get('sub_category'))
-            item.sub_category = sub_category
-            item.slug = request.POST.get('slug')
-            item.description = request.POST.get('description')
-            if request.FILES.get('prev_img'):
-                item.prev_img = request.FILES.get('prev_img')
-            item.price = request.POST.get('price')
-            if request.POST.get('share'):
-                item.share = True
-            else:
-                item.share = False
 
-            if request.POST.get('new'):
-                item.new = True
-            else:
-                item.new = False
-            item.save()
+class CatalogItemAllList(LoginRequiredMixin, View):
+    def get(self, request):
+        all_categories = Category.objects.all()
+        catalog_items = Product.objects.all()
+        paginator = Paginator(catalog_items, 10)
+        page = request.GET.get('page', 1)
+        try:
+            blog_list = paginator.page(page)
+        except PageNotAnInteger:
+            blog_list = paginator.page(1)
+        except EmptyPage:
+            blog_list = paginator.page(paginator.num_pages)
 
-            if request.FILES.get('img[]'):
-                for image in request.FILES.getlist('img[]'):
-                    img = Images()
-                    img.img = image
-                    img.product = Product.objects.get(slug=request.POST.get('slug'))
-                    img.save()
+        context = {
+            'category': all_categories,
+            'catalog_items': blog_list,
+        }
+        return render(request, 'panel/other_templates/catalog_items/catalog_item_all_list.html', context)
 
-            return redirect('/panel/')
+
+class CatalogItemCreate(LoginRequiredMixin, ObjectsCreateUpdateCatalogItem, View):
+    model1 = Category()
+    template = 'panel/other_templates/catalog_items/catalog_item_create.html'
+
+
+class CatalogItemUpdate(LoginRequiredMixin, ObjectsCreateUpdateCatalogItem, View):
+    model1 = Category()
+    model2 = Product()
+    template = 'panel/other_templates/catalog_items/catalog_item_update.html'
+
+
+class CatalogItemDelete(LoginRequiredMixin, ObjectsDelete, View):
+    model = Product()
 
 
 def get_subcaegories(request):

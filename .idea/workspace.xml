@@ -2,19 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a6ebccba-307e-48c9-894c-2699d3453386" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/panel/templates/panel/other_templates/catalog_items/catalog_item_create.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/panel/templates/panel/other_templates/catalog_items/item_list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/panel/templates/panel/other_templates/catalog_items/catalog_item_all_list.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/panel/templates/panel/other_templates/catalog_items/catalog_item_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account/admin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/account/apps.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/account/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/panel/templates/panel/other_templates/catalog_items/catalog_item_update.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/account/tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/account/views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/callboard/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/callboard/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/panel/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/panel/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/panel/static/panel/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/panel/static/panel/css/main.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/panel/static/panel/js/common.js" beforeDir="false" afterPath="$PROJECT_DIR$/panel/static/panel/js/common.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/panel/templates/panel/base/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/panel/templates/panel/base/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/panel/templates/panel/base/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/panel/templates/panel/base/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/panel/templates/panel/other_templates/category/category_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/panel/templates/panel/other_templates/category/category_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/panel/templates/panel/other_templates/catalog_items/catalog_item_create.html" beforeDir="false" afterPath="$PROJECT_DIR$/panel/templates/panel/other_templates/catalog_items/catalog_item_create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/panel/templates/panel/other_templates/catalog_items/item_list.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/panel/templates/panel/other_templates/sub_category/sub_category_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/panel/templates/panel/other_templates/sub_category/sub_category_list.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/panel/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/panel/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/panel/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/panel/utils.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/panel/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/panel/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -24,87 +30,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/panel/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="31" column="69" lean-forward="true" selection-start-line="31" selection-start-column="69" selection-end-line="31" selection-end-column="69" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/panel/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="566">
-              <caret line="102" column="60" selection-start-line="102" selection-start-column="60" selection-end-line="102" selection-end-column="60" />
-              <folding>
-                <element signature="e#0#45#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/panel/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="91" selection-start-line="16" selection-start-column="68" selection-end-line="16" selection-end-column="91" />
-              <folding>
-                <element signature="e#0#37#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/panel/utils.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="626">
-              <caret line="92" selection-start-line="92" selection-end-line="92" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/panel/static/panel/js/common.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="55" column="43" selection-start-line="55" selection-start-column="43" selection-end-line="55" selection-end-column="43" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/panel/templates/panel/other_templates/catalog_items/catalog_item_create.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="536">
-              <caret line="46" column="51" selection-start-line="46" selection-start-column="51" selection-end-line="46" selection-end-column="51" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/panel/templates/panel/base/base.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="556">
-              <caret line="310" selection-start-line="310" selection-end-line="310" />
-              <folding>
-                <element signature="n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#style#0;n#i#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#i#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#i#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#i#3;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#i#4;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#i#5;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#i#6;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -114,6 +40,11 @@
       <find>row grid-wrap mrg20</find>
       <find>stat-box widget bg-clr1</find>
       <find>widget proj-order pad50-40</find>
+      <find>LOGIN_URL</find>
+      <find>description_product</find>
+      <find>JsonResponse</find>
+      <find>HttpResponse</find>
+      <find>HttpResponseNotFound</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -125,25 +56,29 @@
         <option value="$PROJECT_DIR$/public/urls.py" />
         <option value="$PROJECT_DIR$/public/views.py" />
         <option value="$PROJECT_DIR$/callboard/urls.py" />
-        <option value="$PROJECT_DIR$/callboard/settings.py" />
         <option value="$PROJECT_DIR$/public/templates/public/base/base.html" />
         <option value="$PROJECT_DIR$/panel/templates/panel/other_templates/category_create.html" />
         <option value="$PROJECT_DIR$/panel/forms.py" />
         <option value="$PROJECT_DIR$/panel/templates/panel/other_templates/category/category_update.html" />
         <option value="$PROJECT_DIR$/panel/templates/panel/other_templates/sub_category/sub_category_create.html" />
         <option value="$PROJECT_DIR$/panel/templates/panel/other_templates/sub_category/sub_category_update.html" />
-        <option value="$PROJECT_DIR$/panel/utils.py" />
         <option value="$PROJECT_DIR$/panel/templates/panel/base/index.html" />
-        <option value="$PROJECT_DIR$/panel/templates/panel/other_templates/catalog_items/item_list.html" />
         <option value="$PROJECT_DIR$/panel/static/panel/css/main.css" />
+        <option value="$PROJECT_DIR$/panel/templates/panel/other_templates/category/category_list.html" />
+        <option value="$PROJECT_DIR$/panel/models.py" />
+        <option value="$PROJECT_DIR$/panel/templates/panel/other_templates/catalog_items/item_list.html" />
+        <option value="$PROJECT_DIR$/panel/templates/panel/other_templates/sub_category/sub_category_list.html" />
+        <option value="$PROJECT_DIR$/panel/templates/panel/other_templates/catalog_items/catalog_items_all_list.html" />
         <option value="$PROJECT_DIR$/panel/templates/panel/base/base.html" />
         <option value="$PROJECT_DIR$/panel/urls.py" />
+        <option value="$PROJECT_DIR$/panel/templates/panel/other_templates/catalog_items/catalog_item_list.html" />
+        <option value="$PROJECT_DIR$/callboard/settings.py" />
         <option value="$PROJECT_DIR$/panel/static/panel/js/common.js" />
-        <option value="$PROJECT_DIR$/panel/templates/panel/other_templates/category/category_list.html" />
-        <option value="$PROJECT_DIR$/panel/templates/panel/other_templates/sub_category/sub_category_list.html" />
         <option value="$PROJECT_DIR$/panel/templates/panel/other_templates/catalog_items/catalog_item_create.html" />
+        <option value="$PROJECT_DIR$/panel/templates/panel/other_templates/catalog_items/catalog_item_update.html" />
+        <option value="$PROJECT_DIR$/panel/utils.py" />
+        <option value="$PROJECT_DIR$/panel/templates/panel/other_templates/catalog_items/catalog_item_all_list.html" />
         <option value="$PROJECT_DIR$/panel/views.py" />
-        <option value="$PROJECT_DIR$/panel/models.py" />
       </list>
     </option>
   </component>
@@ -159,6 +94,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -199,22 +135,12 @@
               <item name="templates" type="462c0819:PsiDirectoryNode" />
               <item name="panel" type="462c0819:PsiDirectoryNode" />
               <item name="other_templates" type="462c0819:PsiDirectoryNode" />
-              <item name="category" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="callboard" type="b2602c69:ProjectViewProjectNode" />
-              <item name="callboard" type="462c0819:PsiDirectoryNode" />
-              <item name="panel" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="panel" type="462c0819:PsiDirectoryNode" />
-              <item name="other_templates" type="462c0819:PsiDirectoryNode" />
-              <item name="sub_category" type="462c0819:PsiDirectoryNode" />
+              <item name="catalog_items" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -258,7 +184,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1366" y="-1" width="1920" height="1040" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24986821" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -303,16 +228,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/callboard/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="24" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
-          <folding>
-            <element signature="e#633#665#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/templates/public/base/base.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="598">
@@ -324,24 +239,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/callboard/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="41" column="12" selection-start-line="41" selection-start-column="12" selection-end-line="41" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/panel/templates/panel/other_templates/category/category_create.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="10" column="29" lean-forward="true" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/panel/templates/panel/other_templates/sub_category/sub_category_create.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="14" lean-forward="true" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
         </state>
       </provider>
     </entry>
@@ -373,13 +274,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/panel/templates/panel/other_templates/catalog_items/item_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="29" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/panel/forms.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -390,27 +284,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/panel/urls.py">
+    <entry file="file://$PROJECT_DIR$/panel/templates/panel/other_templates/category/category_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="32" column="74" selection-start-line="32" selection-start-column="74" selection-end-line="32" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/media/leopard_agressiya_oskal_morda_72763_1920x1080.jpg" />
+    <entry file="file://$PROJECT_DIR$/media/lesa-zhivotnye-tigry-koshachi.jpg" />
+    <entry file="file://$PROJECT_DIR$/media/pejzazhi-priroda-solnechnyj-svet-ozera-vodopady.jpg" />
+    <entry file="file://$PROJECT_DIR$/panel/templates/panel/other_templates/catalog_items/item_list.html" />
+    <entry file="file://$PROJECT_DIR$/panel/templates/panel/other_templates/sub_category/sub_category_list.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
-          <caret line="16" column="91" selection-start-line="16" selection-start-column="68" selection-end-line="16" selection-end-column="91" />
+          <caret line="16" column="46" lean-forward="true" selection-start-line="16" selection-start-column="46" selection-end-line="16" selection-end-column="112" />
           <folding>
-            <element signature="e#0#37#0" expanded="true" />
+            <element signature="n#style#0;n#h4#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/panel/utils.py">
+    <entry file="file://$PROJECT_DIR$/panel/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="626">
-          <caret line="92" selection-start-line="92" selection-end-line="92" />
+        <state relative-caret-position="585">
+          <caret line="39" column="7" selection-start-line="39" selection-start-column="4" selection-end-line="39" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/panel/templates/panel/other_templates/sub_category/sub_category_create.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="14" lean-forward="true" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/panel/templates/panel/base/base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="556">
-          <caret line="310" selection-start-line="310" selection-end-line="310" />
+        <state relative-caret-position="397">
+          <caret line="255" column="133" selection-start-line="255" selection-start-column="133" selection-end-line="255" selection-end-column="133" />
           <folding>
             <element signature="n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" />
             <element signature="n#style#0;n#i#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -424,54 +336,94 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/panel/static/panel/js/common.js">
+    <entry file="file://$PROJECT_DIR$/callboard/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="55" column="43" selection-start-line="55" selection-start-column="43" selection-end-line="55" selection-end-column="43" />
+        <state relative-caret-position="776">
+          <caret line="127" column="19" selection-start-line="127" selection-start-column="19" selection-end-line="127" selection-end-column="19" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/media/pejzazhi-priroda-solnechnyj-svet-ozera-vodopady.jpg">
-      <provider selected="true" editor-type-id="images" />
+    <entry file="file://$PROJECT_DIR$/callboard/wsgi.py">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/panel/templates/panel/other_templates/sub_category/sub_category_list.html">
+    <entry file="file://$PROJECT_DIR$/callboard/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="39" column="14" selection-start-line="39" selection-start-column="14" selection-end-line="39" selection-end-column="14" />
+        <state relative-caret-position="345">
+          <caret line="23" column="24" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
           <folding>
-            <element signature="n#style#0;n#h4#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="e#633#665#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/panel/templates/panel/other_templates/category/category_list.html">
+    <entry file="file://$PROJECT_DIR$/panel/static/panel/js/common.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="32" column="74" selection-start-line="32" selection-start-column="74" selection-end-line="32" selection-end-column="74" />
+        <state relative-caret-position="517">
+          <caret line="77" column="12" lean-forward="true" selection-start-line="77" selection-start-column="12" selection-end-line="77" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/panel/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="10" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/panel/utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+          <folding>
+            <element signature="e#0#64#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/panel/templates/panel/other_templates/catalog_items/catalog_item_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="31" column="35" selection-start-line="31" selection-start-column="35" selection-end-line="31" selection-end-column="35" />
+          <folding>
+            <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/panel/templates/panel/other_templates/catalog_items/catalog_item_create.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="536">
-          <caret line="46" column="51" selection-start-line="46" selection-start-column="51" selection-end-line="46" selection-end-column="51" />
+        <state relative-caret-position="525">
+          <caret line="35" column="26" selection-start-line="35" selection-start-column="26" selection-end-line="35" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/panel/templates/panel/other_templates/catalog_items/catalog_item_update.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="371">
+          <caret line="40" column="26" selection-start-line="40" selection-start-column="26" selection-end-line="40" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/panel/templates/panel/other_templates/catalog_items/catalog_item_all_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="521">
+          <caret line="77" selection-start-line="77" selection-end-line="77" />
+          <folding>
+            <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/panel/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="566">
-          <caret line="102" column="60" selection-start-line="102" selection-start-column="60" selection-end-line="102" selection-end-column="60" />
+        <state relative-caret-position="1380">
+          <caret line="92" column="39" lean-forward="true" selection-start-line="92" selection-start-column="39" selection-end-line="92" selection-end-column="39" />
           <folding>
             <element signature="e#0#45#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/panel/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="31" column="69" lean-forward="true" selection-start-line="31" selection-start-column="69" selection-end-line="31" selection-end-column="69" />
         </state>
       </provider>
     </entry>

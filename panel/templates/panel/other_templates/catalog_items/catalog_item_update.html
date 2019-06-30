@@ -5,59 +5,75 @@
     <div class="filter-items">
         <div class="row grid-wrap mrg20">
             <div class="col-xl-6">
-                <form action="{% url 'catalog_item_create_url' %}" method="post" enctype="multipart/form-data">
+                <form action="{% url 'catalog_item_update_url' item_id=item.id%}" method="post" enctype="multipart/form-data">
                     {% csrf_token %}
+
                     <input type="hidden" name="" class="get_subcategory" value="{% url 'get_subcategory_url' %}">
                     <div class="form-group d-flex justify-content-start align-items-center">
                         <label for="">Активность</label>
-                        <input type="checkbox" name="active" class="form-control checkbox">
+                        <input type="checkbox" name="active" {% if item.active %} checked {% endif %}class="form-control checkbox">
                     </div>
                     <div class="form-group">
                         <label for="">Название</label>
-                        <input type="text" name="name" required class="form-control create_catalog_item_name">
+                        <input type="text" name="name" required class="form-control create_catalog_item_name" value="{{item.name}}">
                     </div>
                     <div class="form-group">
                         <label for="">ЧПУ</label>
-                        <input type="text" name="slug" required class="form-control create_catalog_item_slug">
+                        <input type="text" name="slug" required class="form-control create_catalog_item_slug" value="{{item.slug}}">
                     </div>
                     <div class="form-group">
                         <label for="category">Категории</label>
+
                         <select class="form-control" required name="category" id="category">
-                            <option value=""></option>
+                            <option value="{{item.category.id}}">{{item.category}}</option>
                             {% for cat in category %}
-                            <option value="{{cat.id}}">{{cat.title}}</option>
+                                {% if cat.id != item.category.id  %}
+                                    <option value="{{cat.id}}">{{cat.title}}</option>
+                                {% endif %}
                             {% endfor %}
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="sub_category">Подкатегории</label>
                         <select class="form-control" required name="sub_category" id="sub_category">
+                             <option value="{{item.sub_category.id}}">{{item.sub_category}}</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="">Детальное описание</label>
-                        <textarea name="description" id="description_product" cols="30" rows="10"
-                                  class="form-control"></textarea>
+                        <textarea name="description" id="description_product" cols="30" rows="10" class="form-control">{{item.description}}</textarea>
                     </div>
                     <div class="form-group">
+                        <div>
+                            {% if item.prev_img %}
+                                <img src="{{item.prev_img.url}}" width="150px" alt="">
+                            {% endif %}
+                        </div>
                         <label for="">Картинка анонса</label>
-                        <input type="file" name="prev_img" class="form-control-file" id="">
+                        <input type="file" name="prev_img"  class="form-control-file" id="">
                     </div>
                     <div class="form-group">
+                        <div>
+                            {% if images %}
+                                {% for image in images %}
+                                    <img src="{{image.img.url}}" width="150px" alt="">
+                                {% endfor %}
+                            {% endif %}
+                        </div>
                         <label for="">Картинки</label>
                         <input type="file" name="img[]" multiple class="form-control-file" id="">
                     </div>
                     <div class="form-group">
                         <label for="">Цена</label>
-                        <input type="text" name="price" required class="form-control">
+                        <input type="text" name="price" required class="form-control" value="{{ item.price|floatformat }}">
                     </div>
                     <div class="form-group d-flex justify-content-start align-items-center">
                         <label for="">Акция</label>
-                        <input type="checkbox" name="share" class="form-control checkbox">
+                        <input type="checkbox" name="share" {% if item.share %} checked {% endif %} class="form-control checkbox">
                     </div>
                     <div class="form-group d-flex justify-content-start align-items-center">
                         <label for="">Новинка</label>
-                        <input type="checkbox" name="new" class="form-control checkbox">
+                        <input type="checkbox" name="new" {% if item.new %} checked {% endif %} class="form-control checkbox">
                     </div>
                     <div class="form-group">
                         <input type="submit" class="form-control" value="Сохранить">

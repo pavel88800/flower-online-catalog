@@ -73,7 +73,14 @@ function urlRusLat(str) {
          let value = $(this).val().replace(/^\s*(.*)\s*$/, '$1');
         $('.sub-category-slug').val(urlRusLat(value));
     });
-
+    $('.create_catalog_item_name').change(function(e){
+         let value = $(this).val().replace(/^\s*(.*)\s*$/, '$1');
+        $('.create_catalog_item_slug').val(urlRusLat(value));
+    });
+    $('#description_product').summernote({
+        tabsize: 2,
+        height: 200
+    });
     $(document).on("change",'#category',function(){ //ajax подгрузка подкатегорий для каждой котегории
         if($(this).val() != ''){
             $.ajax({

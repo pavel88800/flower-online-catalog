@@ -14,8 +14,11 @@ urlpatterns = [
     path('sub_category/<str:sub_category_id>/delete/', SubCategoryDelete.as_view(), name='sub_category_delete_url'),
     path('sub_category/<str:sub_category_id>/update/', SubCategoryUpdate.as_view(), name="sub_category_update_url"),
 
+    path('catalog_item/', CatalogItemAllList.as_view(), name="catalog_items_all_list_url"),
+    path('catalog_item/<str:sub_category_id>/list/', CatalogItemList.as_view(), name="catalog_item_list_url"),
     path('catalog_item/create/', CatalogItemCreate.as_view(), name="catalog_item_create_url"),
+    path('catalog_item/<str:item_id>/update/', CatalogItemUpdate.as_view(), name="catalog_item_update_url"),
+    path('catalog_item/<str:item_id>/delete/', CatalogItemDelete.as_view(), name="catalog_item_delete_url"),
 
     path('get_subcategory/', get_subcaegories, name="get_subcategory_url"),
-
 ]
