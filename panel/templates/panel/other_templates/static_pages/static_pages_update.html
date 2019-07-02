@@ -1,0 +1,18 @@
+{% extends  'panel/base/base.html' %}
+{% load staticfiles %}
+{% block main %}
+<form action="{% url 'static_pages_update_url' page_id=page.id %}" method="post">
+    {% csrf_token %}
+
+    {% for field in form %}
+
+    {{field.label}}
+    {{field}}
+        {% if field.errors %}
+            {{field.errors}}
+        {%endif%}
+    {% endfor %}
+
+    <button type="submit" class="btn btn-primary">Создать страницу</button>
+</form>
+{% endblock %}

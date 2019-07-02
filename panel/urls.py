@@ -20,5 +20,22 @@ urlpatterns = [
     path('catalog_item/<str:item_id>/update/', CatalogItemUpdate.as_view(), name="catalog_item_update_url"),
     path('catalog_item/<str:item_id>/delete/', CatalogItemDelete.as_view(), name="catalog_item_delete_url"),
 
+    path('static_page/all_list/', StaticPageAllList.as_view(), name="static_pages_all_list_url"),
+    path('static_page/create/', StaticPageCreate.as_view(), name="static_pages_create_url"),
+    path('static_page/<str:page_id>/update/', StaticPageUpdate.as_view(), name="static_pages_update_url"),
+    path('static_page/<str:page_id>/delete/', StaticPageDelete.as_view(), name="static_pages_delete_url"),
+
+    path('tags/list/', TagsList.as_view(), name="tags_list_url"),
+    path('tags/create/', TagsCreate.as_view(), name='tag_create_url'),
+    path('tags/<str:tag_id>/update/', TagsUpdate.as_view(), name='tag_update_url'),
+    path('tags/<str:tag_id>/delete/', TagsDelete.as_view(), name='tag_delete_url'),
+    path('tags/<str:tag_id>/tag_items/', TagItemsList.as_view(), name='tag_items_url'),
+
+    path('articles/list/', ArticleList.as_view(), name="articles_list_url"),
+    path('articles/create/', ArticleCreate.as_view(), name="articles_create_url"),
+    path('articles/<str:article_id>/update/', ArticleUpdate.as_view(), name="articles_update_url"),
+    path('articles/<str:article_id>/delete/', ArticleDelete.as_view(), name="articles_delete_url"),
+
     path('get_subcategory/', get_subcaegories, name="get_subcategory_url"),
+    path('logout/', logout_view, name="logout_panel_url"),
 ]

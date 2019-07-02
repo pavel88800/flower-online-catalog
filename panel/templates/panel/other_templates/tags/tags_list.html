@@ -1,0 +1,44 @@
+{% extends  'panel/base/base.html' %}
+{% load staticfiles %}
+{% block main %}
+<div class="add-div-proj d-flex justify-content-end">
+   <span>Добавить категорию</span>  <a class="add-proj brd-rd5" href="{% url 'tag_create_url' %}" data-toggle="tooltip" title="Add Project">+</a>
+</div>
+{% if not tags %}
+    <h3>Теги отсутствуют</h3>
+{% endif %}
+
+<!--bg-clr1,bg-clr2,bg-clr3,bg-clr4-->
+<div class="panel-content">
+    <div class="filter-items">
+        <div class="row grid-wrap mrg20">
+            {% for tag in tags %}
+            <div class="col-md-4 d-flex grid-item col-sm-6 col-lg-4">
+                <div class="stat-box widget bg-clr1">
+                    <div class="wdgt-opt">
+                        <span class="wdgt-opt-btn"><i class="ion-android-more-vertical"></i></span>
+                        <div class="wdgt-opt-lst brd-rd5">
+                            <a class="" href="{% url 'tag_items_url' tag_id=tag.id %}" title="">Перейти</a>
+                            <a class="" href="{% url 'tag_update_url' tag_id=tag.id %}" title="">Изменить</a>
+                            <a class="" href="{% url 'tag_delete_url' tag_id=tag.id %}" title="">Удалить</a>
+                        </div>
+                    </div>
+                    <div class="wdgt-ldr">
+                        <div class="ball-scale-multiple">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                    </div>
+                    <i class="ion-cube"></i>
+                    <div class="stat-box-innr">
+                        <h5 style="color:white">{{tag.articles_set.count}} - эл.</h5>
+                        <h4 style="color:white"><b>{{tag.title}}</b></h4>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

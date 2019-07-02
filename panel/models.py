@@ -38,3 +38,41 @@ class Product(models.Model):
 class Images(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE, null=True)
     img = models.ImageField(blank=True)
+
+
+class StaticPage(models.Model):
+    title = models.CharField(max_length=150)
+    det_text = models.TextField()
+    slug = models.SlugField(unique=True)
+    date_create = models.DateField(auto_now=True)
+
+
+class Reviews(models.Model):
+    user_name = models.CharField(max_length=120)
+    slug = models.SlugField(unique=True, null=True)
+    company = models.CharField(max_length=120, blank=True)
+    image = models.ImageField(blank=True)
+    text = models.TextField()
+
+    def __str__(self):
+        return self.user_name
+
+
+class Tags(models.Model):
+    title = models.CharField(max_length=75)
+    slug = models.SlugField(unique=True, null=True)
+
+    def __str__(self):
+        return self.title
+
+
+class Articles(models.Model):
+    title = models.CharField(max_length=120)
+    date_create = models.DateField(auto_now=True)
+    slug = models.SlugField(unique=True, null=True)
+    tags = models.ManyToManyField(Tags,  blank=True, null=True)
+    catalog_items = models.ManyToManyField(Product, blank=True, null=True)
+    text = models.TextField()
+
+    def __str__(self):
+        return self.title

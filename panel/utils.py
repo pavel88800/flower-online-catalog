@@ -9,8 +9,10 @@ class ObjectListMixin:
 
     def get(self, request):
         obj = self.model.__class__.objects.all()
+        pages = StaticPage.objects.all()
         context = {
-            self.model.__class__.__name__.lower(): obj,
+            'category': obj,
+            'pages': pages,
         }
         return render(request, self.template, context)
 
@@ -158,11 +160,18 @@ class ObjectsCreateUpdateCatalogItem:
 class ObjectsDelete:
     model = None
 
-    def get(self, request, sub_category_id=0, category_id=0, item_id=0):
+    def get(self, request, sub_category_id=0, category_id=0, item_id=0,
+            page_id=0, tag_id=0, article_id=0):  # Тут очень тупанул. Надо было один параметр задать и юзать везде его, не было бы такой херни в аргументах метода, но раз так начал делать, то буду продолжать
         if sub_category_id != 0:
             obj = get_object_or_404(self.model.__class__, id=sub_category_id).delete()
         if category_id != 0:
             obj = get_object_or_404(self.model.__class__, id=category_id).delete()
         if item_id != 0:
             obj = get_object_or_404(self.model.__class__, id=item_id).delete()
+        if page_id != 0:
+            obj = get_object_or_404(self.model.__class__, id=page_id).delete()
+        if tag_id != 0:
+            obj = get_object_or_404(self.model.__class__, id=tag_id).delete()
+        if article_id != 0:
+            obj = get_object_or_404(self.model.__class__, id=article_id).delete()
         return redirect(request.META.get('HTTP_REFERER', '/'))

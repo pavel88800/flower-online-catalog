@@ -221,7 +221,7 @@
                     <a class="brd-rd5 blue-bg-hover" href="#" title=""><i class="ion-forward"></i> Reply</a>
                 </div>
                 <div class="usr-ft">
-                    <a class="btn-danger" href="#" title=""><i class="fa fa-sign-out"></i> Logout</a>
+                    <a class="btn-danger" href="{% url 'logout_panel_url' %}" title=""><i class="fa fa-sign-out"></i> Logout</a>
                 </div>
             </div>
         </div>
@@ -241,8 +241,6 @@
     <div class="nav-head">Main Navigation <span class="menu-trigger"><i class="ion-android-menu"></i></span></div>
     <nav class="custom-scrollbar">
         <div class="d-flex justify-content-around align-items-center"><h4><a href="{% url 'category_list_url' %}">Категории</a></h4><a href="{% url 'category_create_url' %}" class="add-category" title="Добавить категорию"></a></div>
-<!--        <a href="{% url 'sub_category_create_url' %}">Создать подкатегорию</a>-->
-<!--        <a href="">Создать товар</a>-->
         <ul class="drp-sec">
             {% for cat in category %}
                 <li class="has-drp"><a href="#" title=""><i class="ion-briefcase"></i> <span>{{cat.title}}</span></a>
@@ -255,32 +253,21 @@
             {% endfor %}
             <li class=""><a href="{% url 'catalog_items_all_list_url' %}" title=""><i class="ion-briefcase"></i> <span>Список товаров</span></a></li>
         </ul>
-        <h4>Pages</h4>
+        <h4><a href="{% url 'static_pages_all_list_url' %}">Страницы</a></h4>
         <ul class="drp-sec">
-            <li class="has-drp"><a href="#" title=""><i class="ion-android-clipboard"></i> <span>General</span></a>
+            <li class="has-drp"><a href="#" title=""><i class="ion-android-clipboard"></i> <span>Статичные страницы</span></a>
                 <ul class="sb-drp">
-                    <li><a href="404.html" title="">404</a></li>
-                    <li><a href="505.html" title="">505</a></li>
-                    <li><a href="contact.html" title="">Contact Us</a></li>
-                    <li><a href="coming-soon.html" title="">Coming Soon</a></li>
-                    <li><a href="under-maintenance.html" title="">User Maintenance</a></li>
-                    <li><a href="login.html" title="">Login</a></li>
-                    <li><a href="register.html" title="">Register</a></li>
-                    <li><a href="search-result.html" title="">Search Result</a></li>
-                    <li><a href="faq.html" title="">Faq's</a></li>
-                    <li><a href="services.html" title="">Services</a></li>
-                    <li><a href="invoice.html" title="">Invoice Page</a></li>
-                    <li><a href="typography.html" title="">Typography</a></li>
-                    <li><a href="live-chat.html" title="">Live Chat</a></li>
-                    <li><a href="timeline.html" title="">Timeline</a></li>
-                    <li><a href="cropbox.html" title="">Cropbox</a></li>
-                    <li><a href="calculator.html" title="">Calculator</a></li>
+                    {% for page in pages %}
+                        <li><a href="{% url 'static_pages_update_url' page_id=page.id %}" title="">{{page.title}}</a></li>
+                    {% endfor %}
                 </ul>
             </li>
-            <li class="has-drp"><a href="#" title=""><i class="ion-android-contact"></i> <span>User</span></a>
+            <li class="has-drp"><a href="#" title=""><i class="ion-android-contact"></i> <span>Пользователи</span></a>
                 <ul class="sb-drp">
-                    <li><a href="profile.html" title="">Profile Page</a></li>
-                    <li><a href="profile-edit.html" title="">Profile Edit</a></li>
+                    <li><a href="{# url '' #}" title="">Отзывы пользователей</a></li>
+                    <li><a href="{# url '' #}" title="">Список пользователей</a></li>
+                    <li><a href="{% url 'articles_list_url' %}" title="">Список статей</a></li>
+                    <li><a href="{% url 'tags_list_url' %}" title="">Список тегов</a></li>
                 </ul>
             </li>
             <li class="has-drp"><a href="#" title=""><i class="ion-bag"></i> <span>eCommerce</span></a>
