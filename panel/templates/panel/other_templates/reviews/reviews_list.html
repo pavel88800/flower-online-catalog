@@ -1,0 +1,41 @@
+{% extends  'panel/base/base.html' %}
+{% load staticfiles %}
+{% block main %}
+<div class="add-div-proj d-flex justify-content-end">
+   <span>Добавить отзыв</span>  <a class="add-proj brd-rd5" href="{% url 'review_create_url' %}" data-toggle="tooltip" title="Add reviews">+</a>
+</div>
+<!--bg-clr1,bg-clr2,bg-clr3,bg-clr4-->
+<div class="panel-content">
+    <div class="filter-items">
+        <div class="row grid-wrap mrg20">
+            {% if  not reviews %}
+                <h2 class="w-100 text-center">Отзывы отсутствуют</h2>
+            {% endif %}
+            {% for review in reviews %}
+            <div class="col-md-4 d-flex grid-item col-sm-6 col-lg-5">
+                <div class="stat-box widget bg-clr2">
+                    <div class="wdgt-opt">
+                        <span class="wdgt-opt-btn"><i class="ion-android-more-vertical"></i></span>
+                        <div class="wdgt-opt-lst brd-rd5">
+                            <a class="" href="{% url 'review_update_url' review_id=review.id %}" title="">Изменить</a>
+                            <a class="" href="{% url 'review_delete_url' review_id=review.id %}" title="">Удалить</a>
+                        </div>
+                    </div>
+                    <div class="wdgt-ldr">
+                        <div class="ball-scale-multiple">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                    </div>
+                    <i class="ion-android-desktop"></i>
+                    <div class="stat-box-innr">
+                        <h4 style="color:white"><b>{{review.user_name}}</b></h4>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

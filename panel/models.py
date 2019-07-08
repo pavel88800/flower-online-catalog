@@ -49,7 +49,6 @@ class StaticPage(models.Model):
 
 class Reviews(models.Model):
     user_name = models.CharField(max_length=120)
-    slug = models.SlugField(unique=True, null=True)
     company = models.CharField(max_length=120, blank=True)
     image = models.ImageField(blank=True)
     text = models.TextField()

@@ -63,3 +63,15 @@ class ArticleForm(forms.ModelForm):
             'text': forms.Textarea(attrs={'class': 'form-control', 'id': 'description_product'}),
 
         }
+
+
+class ReviewForm(forms.ModelForm):
+    class Meta:
+        model = Reviews
+        fields = ['user_name', 'company', 'text', 'image']
+
+        widgets = {
+            'user_name': forms.TextInput(attrs={'class': 'form-control sub-category-title'}),
+            'company': forms.TextInput(attrs={'class': 'form-control sub-category-slug'}),
+            'text': forms.Textarea(attrs={'class': 'form-control', 'id': 'description_product'}),
+        }

@@ -258,6 +258,7 @@ class TagItemsList(LoginRequiredMixin, View):
         }
         return render(request, 'panel/other_templates/tags/tags_catalog_items_list.html', context)
 
+
 class TagsDelete(ObjectsDelete, View):
     model = Tags()
 
@@ -337,3 +338,69 @@ class ArticleDelete(LoginRequiredMixin, ObjectsDelete, View):
 def logout_view(request):
     logout(request)
     return redirect('/admin/login/?next=/panel/')
+
+
+class ReviewsList(LoginRequiredMixin, View):
+    def get(self, request):
+        reviews = Reviews.objects.all()
+        all_categories = Category.objects.all()
+        context = {
+            'category': all_categories,
+            'reviews': reviews,
+        }
+        return render(request, 'panel/other_templates/reviews/reviews_list.html', context)
+
+
+class ReviewsCreate(LoginRequiredMixin, View):
+    def get(self, request):
+        all_categories = Category.objects.all()
+        form = ReviewForm()
+        context = {
+            'category': all_categories,
+            'form': form,
+        }
+        return render(request, 'panel/other_templates/reviews/reviews_create.html', context)
+
+    def post(self, request):
+        all_categories = Category.objects.all()
+        form = ReviewForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('/panel/reviews/list/')
+
+        context = {
+            'category': all_categories,
+            'form': form,
+        }
+        return render(request, 'panel/other_templates/reviews/reviews_create.html', context)
+
+
+class ReviewsUpdate(LoginRequiredMixin, View):
+    def get(self, request, review_id):
+        all_categories = Category.objects.all()
+        review = Reviews.objects.get(id=review_id)
+        form = ReviewForm(instance=review)
+        context = {
+            'category': all_categories,
+            'review': review,
+            'form': form,
+        }
+        return render(request, 'panel/other_templates/reviews/reviews_update.html', context)
+
+    def post(self, request, review_id):
+        all_categories = Category.objects.all()
+        review = Reviews.objects.get(id=review_id)
+        form = ReviewForm(request.POST, request.FILES, instance=review)
+        if form.is_valid():
+            form.save()
+            return redirect('/panel/reviews/list/')
+
+        context = {
+            'category': all_categories,
+            'form': form,
+        }
+        return render(request, 'panel/other_templates/reviews/reviews_update.html', context)
+
+
+class ReviewDelete(LoginRequiredMixin, ObjectsDelete, View):
+    model = Reviews()

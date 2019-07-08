@@ -36,6 +36,11 @@ urlpatterns = [
     path('articles/<str:article_id>/update/', ArticleUpdate.as_view(), name="articles_update_url"),
     path('articles/<str:article_id>/delete/', ArticleDelete.as_view(), name="articles_delete_url"),
 
+    path('reviews/list/', ReviewsList.as_view(), name="reviews_list_url"),
+    path('reviews/create/', ReviewsCreate.as_view(), name="review_create_url"),
+    path('reviews/<str:review_id>/update/', ReviewsUpdate.as_view(), name="review_update_url"),
+    path('reviews/<str:review_id>/delete/', ReviewDelete.as_view(), name='review_delete_url'),
+
     path('get_subcategory/', get_subcaegories, name="get_subcategory_url"),
     path('logout/', logout_view, name="logout_panel_url"),
 ]
